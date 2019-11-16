@@ -29,7 +29,7 @@ $(document).ready(function(){
 
     function displayGifs() {
         var action = $(this).attr("data-name");
-        var queryURL = ""//Giphy API + action + "Giphy API";
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + action + "&api_key=91AtoTAPMswvk3zW73ZPaFI41XanLhJP&limit=10";
         console.log(queryURL);
         $.ajax({
             url: queryURL,
@@ -68,7 +68,7 @@ $(document).ready(function(){
      addNewButton();
 
      $(document).on("click", ".action", displayGifs);
-     $(documant).on("click", ".image", function(){
+     $(document).on("click", ".image", function(){
          var state = $(this).attr('data-state');
          if (state == 'still'){
              $(this).attr('src', $(this).data('animate'));
